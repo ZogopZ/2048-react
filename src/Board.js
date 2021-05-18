@@ -3,7 +3,7 @@ import './Board.css'
 
 const Board = ({ boardState }) => (
         <div className="board-container container">
-            {console.log(boardState)}
+            {/*{console.log(boardState)}*/}
             <div className="grid-box">{boardState[0]}</div>
             <div className="grid-box">{boardState[1]}</div>
             <div className="grid-box">{boardState[2]}</div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Board from './Board'
+import ArrowLeft from './ArrowLogic'
 
 class App extends Component {
 
@@ -32,11 +33,16 @@ class App extends Component {
         this.setState({boardState});
     }
 
-    onKeyPress(event) {
-        console.log("You just pressed " + event.keyCode);
+    onKeyPress(event, props) {
+        let boardState = [...this.state.boardState];
+        if (event.keyCode === 37) {
+            console.log("You just pressed the LEFT arrow (keyCode: " + event.keyCode + ")");
+            boardState = ArrowLeft(boardState);
+        }
         /*
          * Code goes here!
          */
+        this.setState({boardState});
         this.randomGenerator();
     }
 
